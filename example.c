@@ -2,18 +2,18 @@
 
 int main(void)
 {
-    int total_seconds;
-    int minutes, seconds;
+    int year;
+    int leap;
 
-    printf("Input the seconds: ");
-    if (scanf("%d", &total_seconds) != 1) {
+    printf("Input the year: ");
+    if (scanf("%d", &year) != 1) {
         return 1;
     }
 
-    minutes = total_seconds / 60;
-    seconds = total_seconds % 60;
+    leap = (year % 4 == 0 && year % 100 != 0)
+           || (year % 400 == 0);
 
-    printf("The time is %d:%02d\n", minutes, seconds);
+    printf("Is the year %d a leap year? %i\n", year, leap);
 
     return 0;
 }
