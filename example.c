@@ -2,21 +2,20 @@
 
 int main(void)
 {
-    unsigned int x;
-    int b;
+    int total_seconds;
+    int hours, minutes, seconds;
 
-    printf("Input a number: ");
-    if (scanf("%u", &x) != 1) {
+    printf("Input the seconds: ");
+    if (scanf("%d", &total_seconds) != 1) {
         return 1;
     }
 
-    for (b = 0; x != 0; x >>= 1) {
-        if (x & 1) {
-            b++;
-        }
-    }
+    hours = total_seconds / 3600;
+    minutes = (total_seconds % 3600) / 60;
+    seconds = total_seconds % 60;
 
-    printf("The result is: %d\n", b);
+    printf("The time for %d seconds is %d:%02d:%02d\n",
+           total_seconds, hours, minutes, seconds);
 
     return 0;
 }
