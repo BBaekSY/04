@@ -2,24 +2,18 @@
 
 int main(void)
 {
-    int a, b;
+    int total_seconds;
+    int minutes, seconds;
 
-    printf("Input two integers: ");
-    if (scanf("%i %i", &a, &b) != 2) {
-        printf("Invalid input.\n");
+    printf("Input the seconds: ");
+    if (scanf("%d", &total_seconds) != 1) {
         return 1;
     }
 
-    printf("+ result is %d\n", a + b);
-    printf("- result is %d\n", a - b);
-    printf("* result is %d\n", a * b);
+    minutes = total_seconds / 60;
+    seconds = total_seconds % 60;
 
-    if (b != 0) {
-        printf("/ result is %d\n", a / b);
-        printf("%% result is %d\n", a % b);
-    } else {
-        printf("Cannot divide by zero.\n");
-    }
+    printf("The time is %d:%02d\n", minutes, seconds);
 
     return 0;
 }
