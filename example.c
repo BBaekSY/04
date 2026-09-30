@@ -2,13 +2,24 @@
 
 int main(void)
 {
-    int x = 2, y, z = 1, m;
-    int a = 3, b = 4, c = 5;
+    int a, b;
 
-    y = a * x * x + b * x + c;
-    m = (x + y + z) / 3;
+    printf("Input two integers: ");
+    if (scanf("%i %i", &a, &b) != 2) {
+        printf("Invalid input.\n");
+        return 1;
+    }
 
-    printf("y=%d, m=%d\n", y, m);
+    printf("+ result is %d\n", a + b);
+    printf("- result is %d\n", a - b);
+    printf("* result is %d\n", a * b);
+
+    if (b != 0) {
+        printf("/ result is %d\n", a / b);
+        printf("%% result is %d\n", a % b);
+    } else {
+        printf("Cannot divide by zero.\n");
+    }
 
     return 0;
 }
